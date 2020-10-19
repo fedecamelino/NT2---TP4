@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Camelino - Juego Colores</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    </head>
+
+    <body>
+        <div id="appVueCDN">
+            
+            <!-- Componente "header-colores" de Vue  -->
+            <header-colores 
+                :dynamic-colors="dynamicColors"
+            ></header-colores>
+            
+            <!-- Componente "navigator-colores" de Vue  -->
+            <navigator-colores 
+                :reset="reset"
+                :easy="easy"
+                :hard="hard"
+                :restart-button= "mensajes.restartButton"
+                :message-display= "mensajes.messageDisplay"
+                :is-hard="isHard"
+            ></navigator-colores>
+
+            <!-- Componente "container-colores" de Vue  -->
+            <container-colores 
+                :mensajes="mensajes"
+                :squares="squares"
+                :set-all-colors-to="setAllColorsTo"
+                :dynamic-colors="dynamicColors"
+            ></container-colores>
+
+            <!-- Notas -->
+            <!-- 1) html no admite camelCase, por ende se usa el guión. Por ejemplo en las props -->
+            <!-- 2) Dentro del componente "container-colores" uso el componente "square" -->
+            <!-- 3) "mensajes" es un objeto de la data() de la instancia principal de Vue -->
+        
+        </div>
+
+        <script type="text/javascript" src="appVueCDN.js"></script>
+
+    </body>
+
+</html>
